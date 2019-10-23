@@ -1,0 +1,89 @@
+/*1
+insert into tbl_staff
+(id,name,surname,birthDate,startdate,staffRole,adress)
+values
+(7,'nazli','bilir','1989-09-15',getdate(),3,NULL)
+*/
+/*2
+select * from tbl_Staff
+where name='Deniz' and surname='yýlmaz';
+
+update tbl_Staff 
+SET adress='Pamukkale, Denizli',staffRole='1'
+where name='Deniz' and surname='yýlmaz';
+
+Select * from tbl_Staff
+where name='Deniz' and surname='yýlmaz';
+*/
+/*3
+delete from tbl_staff
+where name='aslý' and surname='güler';
+*/
+/*4?
+select * from tbl_animalType
+*/
+/*5
+1)
+select * from tbl_AnimalType
+where classTypeId=(select id from tbl_AnimalType where info='Kuþ')
+2)
+select * from tbl_animalType 
+as a inner join tbl_animalType 
+as b on a.classTypeId=b.id
+where b.info='Kuþ'
+*/
+/*6
+select top 1 name from tbl_animal
+order by arrivalDate desc
+/*desc buyukten kucuge*/
+*/
+/*7
+select top 1 name,arrivalDate from tbl_animal
+where arrivalDate IS NOT NULL
+order by arrivalDate desc
+
+select * from tbl_animal
+*/
+/*8
+1)
+select * from tbl_animal
+where arrivalDate>='01.01.2019'
+or birthdate>='01.01.2019'
+
+2)
+select * from tbl_animal
+where datepart(yy,arrivalDate))=
+(select datepart(yy,getdate()))
+or datepart(yy,birthDate))=
+(select datepart(yy,getdate()))
+
+3)
+Odev
+
+select getdate()
+select datepart(yy,gatdate())
+*/
+/*9
+select animalType_Id from tbl_animal
+1)
+select info, (
+select count(animalType_Id) from tbl_animal
+where animaltype_Id=tbl_animalType.id)
+from tbl_animalType
+where id in(select animalType_Id from tbl_animal)
+
+2)
+select info, count(tbl_animal.id) from tbl_animal
+inner join tbl_AnimalType on animaltype_Id=tbl_animaltype.id
+group by info
+*/
+/*10
+
+*/
+
+
+
+
+
+
+
